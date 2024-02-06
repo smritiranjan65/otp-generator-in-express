@@ -1,4 +1,9 @@
 nodemailer = require('nodemailer');
+otp = require('./index.js');
+
+sendEmail = async(email, otp) =>{
+
+
 
 
 // service provider, credentials, handshaking
@@ -14,12 +19,13 @@ nodemailer = require('nodemailer');
     })
 
 
+
 //mail object
 mail = {
     from: 'smritiranjan65@gmail.com',
     to: 'tkumari930451@gmail.com',
     subject: 'OTP',
-    text: `Your otp for signin is value`
+    text: `Your otp is` + genotp()
 }
 
 //send mail
@@ -30,3 +36,4 @@ transporter.sendMail(mail, (err, data) => {
         console.log(data)
     }
 })
+};

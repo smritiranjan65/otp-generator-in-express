@@ -15,10 +15,10 @@ genotp = () => {
 // You can limit the no. of charaters of otp
 //OTP = otpgen.generate(6);
 
-//genotp()
+genotp()
  //sending otps on browser(frontend)
-app.get('/', (req,res) => {
-    res.send('<h2>Your otp is:</h2> ' + genotp())})
+//app.get('/', (req,res) => {
+  //  res.send('<h2>Your otp is:</h2> ' + genotp())})
 
 
 
