@@ -36,4 +36,8 @@ transporter.sendMail(mail, (err, data) => {
         console.log(data)
     }
 })
+
+
 };
+
+sendEmail()

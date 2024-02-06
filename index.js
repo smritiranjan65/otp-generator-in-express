@@ -20,6 +20,25 @@ genotp()
 //app.get('/', (req,res) => {
   //  res.send('<h2>Your otp is:</h2> ' + genotp())})
 
+  app.get('/verify', (req, res) => {
+    res.sendfile('index.html')
+})
+
+
+app.post('/verify',async(req, res) =>
+ {
+     userOTP = req.body.otp;
+     console.log(userOTP)
+     if (userOTP == OTP){
+        res.send('verified')
+     }
+     else{
+        res.send('please enter password again')
+     }
+
+     //res.send('welcome')
+})
+
 
 
 
