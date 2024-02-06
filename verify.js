@@ -7,8 +7,21 @@ app = express();
 app.use(express.json());
 
 app.post('/send', async(req, res) => {
-    mail = req.body.email;
+    mail = 'smritiranjan65@gmail.com';
     OTP = genotp();
     await sendEmail(mail, OTP)
     res.send('email sent successfully')
+
+})
+
+
+app.send('/verify',async(req, res) =>
+ {
+     userOTP = req.user.otp;
+     if (userOTP == OTP){
+        res.send('verified')
+     }
+     else{
+        res.send('please enter password again')
+     }
 })
